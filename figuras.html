@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras geometricas | Curso Platzi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Figuras geometricas</h1>
+    </header>
+
+    <main class="main-figuras">
+        <section class="section-figura">
+            <div>
+                <h2>Cuadrado</h2>
+                <form action="#" id="cuadrado-form">
+                    <label for="ladoCuadrado">
+                        Lados del cuadrado (cm):
+                        <input type="number" id="ladoCuadrado">
+                    </label>
+                    <button id="botonPerimetroCuadrado">Calcular perimetro</button>
+                    <button id="botonAreaCuadrado"> Calcular area</button>
+                </form>
+                <div class="respuesta-calculo" id="respuesta-cuadrado">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-figura">
+            <div>
+                <h2>Triangulo</h2>
+                <form action="#" id="triangulo-form">
+                    <label for="ladoTriangulo1">
+                        Lado 1 del triangulo (cm):
+                        <input type="number" id="ladoTriangulo1">
+                    </label>
+                    <label for="ladoTriangulo2">
+                        Lado 2 del triangulo (cm):
+                        <input type="number" id="ladoTriangulo2">
+                    </label>
+                    <label for="baseTriangulo">
+                        Base del triangulo (cm):
+                        <input type="number" id="baseTriangulo">
+                    </label>
+                    <label for="alturaTriangulo">
+                        Altura del triangulo (cm):
+                        <input type="number" id="altura">
+                    </label>
+                    <button id="botonPerimetroTriangulo">Calcular perimetro</button>
+                    <button id="botonAreaTriangulo"> Calcular area</button>
+                </form>
+                <div class="respuesta-calculo" id="respuesta-triangulo">
+                </div>
+            </div>
+        </section>
+
+        <section class="section-figura">
+            <div>
+                <h2>Circulo</h2>
+                <form action="#" id="circulo-form">
+                    <label for="radioCirculo">
+                        Radio del circulo (cm):
+                        <input type="number" id="radioCirculo">
+                    </label>
+                    <button id="botonDiametroCirculo">Calcular perimetro</button>
+                    <button id="botonPerimetroCirculo">Calcular perimetro</button>
+                    <button id="botonAreaCirculo"> Calcular area</button>
+                </form>
+                <div class="respuesta-calculo" id="respuesta-circulo">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./figuras.js"></script>
+</body>
+
+</html>
