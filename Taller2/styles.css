@@ -1,0 +1,102 @@
+:root {
+    --fondoVerde: #2a9d8f;
+    --fuente: 'Varela Round', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    background: var(--fondoVerde);
+    font-family: var(--fuente);
+}
+
+header {
+    height: 10vh;
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.main-descuentos {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-descuentos {
+    width: 100%;
+}
+
+.section-descuentos > div {
+    margin: 0 auto;
+    padding: 2rem;
+    width: 40%;
+    height: fit-content;
+    border-radius: 25px;
+    background: linear-gradient(315deg, #2da899, #268d81);
+    box-shadow:  -11px -11px 22px #1f7368, 11px 11px 22px #35c7b6;
+    text-align: center;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+#form-descuentos {
+    margin: 2rem;
+    height: 100%;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+#form-descuentos * {
+    display: block;
+}
+
+#form-descuentos input {
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 30%;
+    text-align: center;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#form-descuentos button {
+    margin: 3rem auto;
+    background: none;
+    font-family: var(--fuente);
+    font-size: 1.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 1.0rem;
+    background: linear-gradient(145deg, #2da899, #268d81);
+    box-shadow:  20px 20px 30px #1c6960,
+                 -20px -20px 30px #38d1be;
+}
+
+#form-descuentos button:active {
+    box-shadow: inset 20px 20px 30px #1c6960,
+                inset -20px -20px 30px #38d1be;
+}
+
+#respuesta-descuento {
+    width: 80%;
+    height: fit-content;
+    box-shadow: inset 20px 20px 30px #1c6960,
+                inset -20px -20px 30px #38d1be;
+}
