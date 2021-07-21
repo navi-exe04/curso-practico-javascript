@@ -1,58 +1,123 @@
+//Global scope
+const PI = Math.PI;
+//Elementos del cuadrado
+const ladoCuadrado = document.getElementById('ladoCuadrado');
+const botonPerimetroCuadrado = document.getElementById('botonPerimetroCuadrado');
+const botonAreaCuadrado = document.getElementById('botonAreaCuadrado');
+const divRespuestaCuadrado = document.getElementById('respuesta-cuadrado');
+//Elementos del triangulo
+const lado1Triangulo = document.getElementById('ladoTriangulo1');
+const lado2Triangulo = document.getElementById('ladoTriangulo2');
+const baseTriangulo = document.getElementById('baseTriangulo');
+const alturaTriangulo = document.getElementById('alturaTriangulo');
+const botonPerimetroTriangulo = document.getElementById('botonPerimetroTriangulo');
+const botonAreaTriangulo = document.getElementById('botonAreaTriangulo');
+const divRespuestaTriangulo = document.getElementById('respuesta-triangulo');
+//Elementos del circulo
+const radioCirculo = document.getElementById('radioCirculo');
+const botonDiametroCirculo = document.getElementById('botonDiametroCirculo');
+const botonPerimetroCirculo = document.getElementById('botonPerimetroCirculo');
+const botonAreaCirculo = document.getElementById('botonAreaCirculo');
+const divRespuestaCirculo = document.getElementById('respuesta-circulo');
+
 //Codigo del cuadrado
-console.group("Cuadrados"); //Nos permite agrupar una serie de consoles para tener mejor orden en la consola
+botonPerimetroCuadrado.addEventListener('click', (e) => {
+    e.preventDefault();
+    limpiarHTML(divRespuestaCuadrado);
+    const perimetroCuadrado = CalcularPerimetroCuadrado(ladoCuadrado.value);
+    crearParrafo(divRespuestaCuadrado, "Perimetro", perimetroCuadrado);
+});
 
-/* const ladoCuadrado = 5;
-console.log("Lados del cuadrado miden: " + ladoCuadrado + " cm"); */
+botonAreaCuadrado.addEventListener('click', (e) => {
+    limpiarHTML(divRespuestaCuadrado);
+    const areaCuadrado = CalcularPerimetroCuadrado(ladoCuadrado.value);
+    crearParrafo(divRespuestaCuadrado, "Area", areaCuadrado);
+});
 
-/*function perimetroCuadrado(ladoCuadrado) {
+function CalcularPerimetroCuadrado(ladoCuadrado) {
     return ladoCuadrado * 4;
-} */ //Podriamos usar la sintaxis de la funcion normal
-//Pero para este tipo de casos que se regresa una operacion sencilla
-//Lo mejor es usar la funcion arrow ya que simplifica mucho el codigo.
-const perimetroCuadrado = (ladoCuadrado) => ladoCuadrado * 4; 
-console.log("El perimetro del cuadrado es: " + perimetroCuadrado(5) + " cm");
+};
 
-const areaCuadrado = (ladoCuadrado) => Math.pow(ladoCuadrado, 2);
-console.log("El area del cuadrado es: " + areaCuadrado(5) + " cm2");
-
-console.groupEnd();
+function CalcularAreaCuadrado(ladoCuadrado) {
+    return Math.pow(ladoCuadrado, 2);
+};
 
 //Codigo del Triangulo
-console.group("Triangulos");
+botonPerimetroTriangulo.addEventListener('click', (e) => {
+    e.preventDefault;
+    limpiarHTML(divRespuestaTriangulo);
+    const perimetroTriangulo = CalcularPerimetroTriangulo(lado1Triangulo.value, lado2Triangulo.value, baseTriangulo.value);
+    crearParrafo(divRespuestaTriangulo, "Perimetro", perimetroTriangulo);
+});
 
-/* const ladoTriangulo1 = 6;
-const ladoTriangulo2 = 6;
-const baseTriangulo = 4;
-console.log("Los lados del triangulo miden " 
-            + ladoTriangulo1 + " cm, "
-            + ladoTriangulo2 + " cm, y "
-            + baseTriangulo + " cm"); */
+botonAreaTriangulo.addEventListener('click', (e) => {
+    e.preventDefault;
+    limpiarHTML(divRespuestaTriangulo);
+    const areaTriangulo = CalcularAreaTriangulo(baseTriangulo.value, alturaTriangulo.value);
+    crearParrafo(divRespuestaTriangulo, "Area", areaTriangulo);
+});
 
-/* const alturaTriangulo = 5.5;
-console.log("La altura del triangulo mide: " + alturaTriangulo + " cm"); */
+function CalcularPerimetroTriangulo(lado1, lado2, base){
+    return lado1 + lado2 + base;
+}; 
 
-const perimetroTriangulo = (lado1, lado2,base) => lado1 + lado2 + base;
-console.log("El perimetro del triangulo es: " + perimetroTriangulo(6,6,4) + " cm");
-
-const areaTriangulo = (base, altura) => (base * altura) / 2;
-console.log("El area del triangulo es: " + areaTriangulo(4,5.5) + " cm2");
-
-console.groupEnd();
+function CalcularAreaTriangulo(base, altura) {
+    return (base * altura) / 2;
+}
 
 //Codigo del Circulo
-console.group("Circulos");
+botonDiametroCirculo.addEventListener('click', (e) => {
+    e.preventDefault();
+    limpiarHTML(divRespuestaCirculo);
+    const diametroCirculo = CalcularDiametroCirculo(radioCirculo.value);
+    crearParrafo(divRespuestaCirculo, "Diametro", diametroCirculo);
+});
 
-/* const radioCirculo = 4;
-console.log("El radio del circulo mide: " + radioCirculo + " cm"); */
-const PI = Math.PI;
+botonPerimetroCirculo.addEventListener('click', (e) => {
+    e.preventDefault();
+    limpiarHTML(divRespuestaCirculo);
+    const perimetroCirculo = CalcularPerimetroCirculo(radioCirculo.value);
+    crearParrafo(divRespuestaCirculo, "Perimetro", perimetroCirculo);
+});
 
-const diametroCirculo = (radio) => radio * 2;
-console.log("El diametro del circulo mide: " + diametroCirculo(4) + " cm");
+botonAreaCirculo.addEventListener('click', (e) => {
+    e.preventDefault();
+    limpiarHTML(divRespuestaCirculo);
+    const areaCirculo = CalcularAreaCirculo(radioCirculo.value);
+    crearParrafo(divRespuestaCirculo, "Area", areaCirculo);
+});
 
-const perimetroCirculo = (radio) => diametroCirculo(radio) * PI;
-console.log("El perimetro del circulo es: " + perimetroCirculo(4) + " cm");
+function CalcularDiametroCirculo(radio) {
+    return radio * 2;
+};
 
-const areaCirculo = (radio) => (radio * radio) * PI;
-console.log("El area del circulo es: " + areaCirculo(4) + " cm2");
+function CalcularPerimetroCirculo(radio) {
+    return CalcularDiametroCirculo(radio) * PI;
+};
 
-console.groupEnd();
+function CalcularAreaCirculo(radio) {
+    return (radio * radio) * PI;
+};
+
+
+//Funcion para agregar un parrafo al HTML
+function crearParrafo( divFigura, valor, respuesta) {
+    const parrafoRespuesta = document.createElement('p');
+    if(valor === "Area") {
+        parrafoRespuesta.innerHTML = `
+            ${valor}: ${respuesta} cm2
+        `;
+    } else {
+        parrafoRespuesta.innerHTML = `
+            ${valor}: ${respuesta} cm
+        `;
+    }
+    divFigura.appendChild(parrafoRespuesta);
+}
+
+//Funcion para limpiar el HTML
+function limpiarHTML(elementToClean) {
+    while (elementToClean.firstChild) {
+        elementToClean.removeChild(elementToClean.firstChild);
+    }
+}

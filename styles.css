@@ -32,27 +32,41 @@ header{
 
 .section-figura {
     width: 30%;
-    height: 100%;
 }
 
-.section-figura div{
+.section-figura > div{
     background-color: lightsalmon;
     width: 100%;
-    height: 60%;
+    height: 75vh;
     margin: 1rem;
     padding: 2rem;
     border-radius: 5px;
     text-align: center;
 }
 
+.respuesta-calculo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: goldenrod;
+    margin: 2rem 0;
+    border: 1px solid indigo;
+    border-radius: 10px;
+    height: 4rem;
+    width: 100%;
+    font-size: 2rem;
+}
+
 h2 {
     font-size: 3rem;
     margin: 1rem;
 }
+
 form {
     display: flexbox;
     flex-wrap: wrap;
     margin: 0 auto;
+    font-size: 1.5rem;
 }
 
 form * {
@@ -66,4 +80,11 @@ input {
     padding: 1rem;
     font-size: 1.5rem;
     text-align: center;
+}
+
+button {
+    width: 50%;
+    border-radius: 5px;
+    padding: 1rem;
+    font-weight: bolder;
 }
